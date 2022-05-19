@@ -76,7 +76,7 @@ resources:
     type: sha256
     value: 45a8db8d08e3092c06b0d424a815fe9d25b3c1445db38da554f1ecb7aee7e97b
 
-- failename: FileIO.jl-1.14.0.tar.gz
+- filename: FileIO.jl-1.14.0.tar.gz
   url: https://github.com/JuliaIO/FileIO.jl/archive/refs/tags/v1.14.0.tar.gz
   validation:
     type: sha256
