@@ -21,8 +21,7 @@ ENV VIRTUAL_ENV=/opt/julia/venv
 RUN julia -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN using Pkg --no-index --find-links /opt/python/repo/tmp/ai-packages/    \
-        Pkg.add("Mocha")                                \
+RUN using Pkg --no-index --find-links /ai-packages/     \
         Pkg.add("Tensorflow")                           \
         Pkg.add("MLBase")                               \
         Pkg.add("Clustering")                           \
