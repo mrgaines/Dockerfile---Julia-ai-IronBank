@@ -3,7 +3,9 @@ ARG BASE_IMAGE=ironbank/opensource/r/julia-base
 ARG BASE_TAG=latest
 FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 
-USER root
+ARG USER="joules"
+ARG UID="1000"
+ARG GID="100"
 
 RUN dnf upgrade -y --nodocs && \
     dnf clean all && \
@@ -62,24 +64,13 @@ RUN using Pkg --no-index --find-links /opt/python/repo/tmp/ai-packages/    \
 USER root
 
 # Removing unneeded vulnerable binaries
-RUN rpm -e --nodeps   \
-    binutils          \
-    glibc-devel       \
-    glibc-headers     \
-    kernel-headers
 
-# Modifying identified SUID files
-RUN chmod g-s /usr/libexec/openssh/ssh-keysign
+RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
+    && chmod -R 775 /home/joules
 
-##########################
-# Clean up install files #
-##########################
+USER $UID
 
-RUN rm -rf /opt/python/repo
+CMD ["/julia/julia-1.7.2/bin/julia"]
 
-USER 1001
-
-WORKDIR $HOME
-
-HEALTHCHECK --interval=10s --timeout=1s CMD -c 'print("up")' || exit 1
+HEALTHCHECK NONE
 
