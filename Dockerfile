@@ -11,9 +11,9 @@ RUN dnf upgrade -y --nodocs && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
-RUN mkdir -p tmp/ai-packages/ /ai-packages/
+RUN mkdir -p /tmp/ai-packages/ /ai-packages/
 COPY *.tar.gz /tmp/ai-packages/ 
-RUN tar xvf /tmp/ai-packages/*.tar.gz -C /ai-packages
+RUN tar xvf /tmp/ai-packages/*.tar.gz 
 
 USER 1001
 
@@ -21,7 +21,7 @@ ENV VIRTUAL_ENV=/opt/julia/venv
 RUN julia -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN using Pkg --no-index --find-links /ai-packages/     \
+RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("Tensorflow")                           \
         Pkg.add("MLBase")                               \
         Pkg.add("Clustering")                           \
