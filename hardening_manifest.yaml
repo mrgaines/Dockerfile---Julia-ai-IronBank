@@ -22,11 +22,11 @@ labels:
   mil.dso.ironbank.product.name: "Julia-ai"
 
 resources:
-- filename: julia-1.7.2.tar.gz
-  url: https://github.com/JuliaLang/julia/releases/download/v1.7.2/julia-1.7.2.tar.gz
-  validation:
-    type: sha256
-    value: 0847943dd65001f3322b00c7dc4e12f56e70e98c6b798ccbd4f02d27ce161fef
+#- filename: julia-1.7.2.tar.gz
+  #url: https://github.com/JuliaLang/julia/releases/download/v1.7.2/julia-1.7.2.tar.gz
+  #validation:
+    #type: sha256
+    #value: 0847943dd65001f3322b00c7dc4e12f56e70e98c6b798ccbd4f02d27ce161fef
 
 - filename: Flux.jl-0.13.1.tar.gz
   url: https://github.com/FluxML/Flux.jl/archive/refs/tags/v0.13.1.tar.gz
@@ -64,6 +64,23 @@ resources:
     type: sha256
     value: 4669d216b805ed8ef247a1d5ec8cb6aa757a37a951a0f45c5332631bdacc8dc8
  
+- filename: TensorFlow.jl-0.12.0.tar.gz
+  url: https://github.com/malmaud/TensorFlow.jl/archive/refs/tags/v0.12.0.tar.gz
+  validation:
+    type: sha256
+    value: 818b2fb95dd6c02eac4d2f74b019083f2cb6209cb03a631a9427ac9e2debba40
+
+- filename: JuliaParser.jl-0.7.4.tar.gz
+  url: https://github.com/JuliaLang/JuliaParser.jl/archive/refs/tags/v0.7.4.tar.gz
+  validation:
+    type: sha256
+    value: 45a8db8d08e3092c06b0d424a815fe9d25b3c1445db38da554f1ecb7aee7e97b
+
+- failename: FileIO.jl-1.14.0.tar.gz
+  url: https://github.com/JuliaIO/FileIO.jl/archive/refs/tags/v1.14.0.tar.gz
+  validation:
+    type: sha256
+    value: 2f3bdf4b4fafedf966a34004f194b1a8ac94bb1fec93933fd70eb68faded7b23
 
 maintainers:
 - email: jafforice@gmail.com
