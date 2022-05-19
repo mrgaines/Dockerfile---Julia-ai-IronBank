@@ -48,7 +48,7 @@ RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("Languages")
 
 
-RUN using Pkg --no-index --find-links /opt/python/repo/tmp/ai-packages/    \
+RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("FileIO")                                   \
         Pkg.add("ForwardDiff")                              \
         Pkg.add("DiffResults")                              \
