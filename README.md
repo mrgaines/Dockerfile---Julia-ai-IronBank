@@ -6,6 +6,6 @@ Additional artificial intelligence, machine learning, & robotics (sensor-modelin
 **Sensor-modeling:** 
 FileIO/ForwardDiff/DiffResults/Interpolations/NLopt/OrdinaryDiffq/Plots/RobotOSData
 
-**AI/ML: **
+**AI-ML: **
 Mocha/Tensorflow/MLBase/Clustering/ScikitLearn/Flux/Merlin/Knet/TextAnalysis/StatsModels/DecisionTree/LIBSVM/MLJ/MLJModels/JuliaParser/MLKernels/Kernels/ANN/OnlineAI/RDatasets/UnicodePlots/Languages
 
