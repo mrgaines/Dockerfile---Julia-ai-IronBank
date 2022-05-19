@@ -82,6 +82,29 @@ resources:
     type: sha256
     value: 2f3bdf4b4fafedf966a34004f194b1a8ac94bb1fec93933fd70eb68faded7b23
 
+- filename: LIBSVM.jl-0.8.0.tar.gz
+  url: https://github.com/JuliaML/LIBSVM.jl/archive/refs/tags/v0.8.0.tar.gz
+  validation:
+    type: sha256
+    value: 38775e7e1f53d3c1091ac77a8162ed1deb6b29ec376722f45b53c6149edfa4d8
+
+- filename: DiffResults.jl-1.0.3.tar.gz
+  url: https://github.com/JuliaDiff/DiffResults.jl/archive/refs/tags/v1.0.3.tar.gz
+  validation:
+    type: sha256
+    value: 6d8497114b452721f42751d91cbae37116b1c5a2a3c6115bb9a9637abcb7e5d7
+
+- filename: Interpolations.jl-0.13.6.tar.gz
+  url: https://github.com/JuliaMath/Interpolations.jl/archive/refs/tags/v0.13.6.tar.gz
+  validation:
+    type: sha256
+    value: d539158cbb77c579637544474511d7246fecfe3bb69fd50677d0ce38e51281ea
+
+- filename: NLopt.jl-0.6.5.tar.gz
+  url: https://github.com/JuliaOpt/NLopt.jl/archive/refs/tags/v0.6.5.tar.gz
+  validation:
+    type: sha256
+    value: eecb677ab78d1118a7121ab5ece2a4d7b846c85b316007da95f40e1f888c486f 
 maintainers:
 - email: jafforice@gmail.com
   username: jafforice
