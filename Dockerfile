@@ -79,25 +79,6 @@ RUN rpm -e --nodeps   \
     glibc-headers     \
     kernel-headers
 
-# Removing identified secret
-RUN rm -rf /usr/share/doc/perl-IO-Socket-SSL/certs/                 && \
-    rm -rf /usr/share/doc/perl-IO-Socket-SSL/example/               && \
-    rm -rf /usr/share/doc/perl-IO-Socket-SSL/example/               && \
-    rm -rf /usr/share/doc/perl-Net-SSLeay/examples/server_key.pem   && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/badkey.pem && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/badcert.pem && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/dulwich/contrib/test_paramiko_vendor.py && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/keycert.pem && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/ssl_key.pem && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/ssl_key.passwd.pem && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/keycert.passwd.pem && \
-    rm -rf /opt/python/venv/lib/python3.8/site-packages/future/backports/test/keycert2.pem
-
-# Mitigation for Docker package for python
-RUN rm -rf /opt/python/venv/lib/python3.8/site-packages/docker-5.0.3.dist-info/*
-RUN rm -rf /opt/python/venv/lib/python3.8/site-packages/docker/*
-
-
 # Modifying identified SUID files
 RUN chmod g-s /usr/libexec/openssh/ssh-keysign
 
@@ -111,5 +92,5 @@ USER 1001
 
 WORKDIR $HOME
 
-HEALTHCHECK --interval=10s --timeout=1s CMD python3.8 -c 'print("up")' || exit 1
+HEALTHCHECK --interval=10s --timeout=1s CMD -c 'print("up")' || exit 1
 
