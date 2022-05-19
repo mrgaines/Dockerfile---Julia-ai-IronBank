@@ -21,8 +21,8 @@ RUN chown -R 1001:users /opt/julia
 
 # pipeline
 #COPY *.tar.gz /tmp/ai-packages
-#RUN tar xfz /tmp/ai-packages/python38-ai-packages-04-21-2022.tar.gz -C /opt/python/repo
-#RUN tar xfz /tmp/ai-packages/python-ai-packages-03-31-2022.tar.gz -C /opt/python/repo
+#RUN tar xfz /tmp/ai-packages -C /opt/python/repo
+#RUN tar xfz /tmp/ai-packages -C /opt/python/repo
 
 USER 1001
 
@@ -30,7 +30,7 @@ ENV VIRTUAL_ENV=/opt/julia/venv
 RUN julia -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN using Pkg --no-index --find-links /opt/python/repo/tmp/python38-ai-package-downloads/    \
+RUN using Pkg --no-index --find-links /opt/python/repo/tmp/ai-packages/    \
         Pkg.add("Mocha")                                \
         Pkg.add("Tensorflow")                           \
         Pkg.add("MLBase")                               \
@@ -56,7 +56,7 @@ RUN using Pkg --no-index --find-links /opt/python/repo/tmp/python38-ai-package-d
         Pkg.add("Languages")
 
 
-RUN using Pkg --no-index --find-links /opt/python/repo/tmp/python38-ai-package-downloads/    \
+RUN using Pkg --no-index --find-links /opt/python/repo/tmp/ai-packages/    \
         Pkg.add("FileIO")                                   \
         Pkg.add("ForwardDiff")                              \
         Pkg.add("DiffResults")                              \
