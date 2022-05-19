@@ -41,25 +41,25 @@ resources:
     value: a95319d5c7011d3fdd1d9b9bea7b8259c761891acb247ebda310e227572b6189
     
 - filename: ScikitLearn.jl-0.6.4.tar.gz
-  url: https://github.com/cstjean/ScikitLearn.jl/releases/tag/v0.6.4
+  url: https://github.com/cstjean/ScikitLearn.jl/archive/refs/tags/v0.6.4.tar.gz
   validation:
     type: sha256
     value: 8d513a2430fb79cb25baf5ad8cd12a265f980b7f6cf7793efe44d8b952b934aa
 
 - filename: TextAnalysis.jl-0.7.3.tar.gz
-  url: https://github.com/JuliaText/TextAnalysis.jl/releases/tag/v0.7.3
+  url: https://github.com/JuliaText/TextAnalysis.jl/archive/refs/tags/v0.7.3.tar.gz
   validation:
     type: sha256
     value: 1fb0b531e05be7634eaa5e4f70355498b34c04070b4a5a790fd465bdf50220cc
 
 - filename: Clustering.jl-0.14.2.tar.gz
-  url: https://github.com/JuliaStats/Clustering.jl/releases/tag/v0.14.2
+  url: https://github.com/JuliaStats/Clustering.jl/archive/refs/tags/v0.14.2.tar.gz
   validation:
     type: sha256
     value: 4c0254d0d11c7fe74aa59a67a6ac2e5f15af1fdd8726ac5b378d06265ac7f952
 
 - filename: MLDatasets.jl-0.6.0.tar.gz
-  url: https://github.com/JuliaML/MLDatasets.jl/releases/tag/v0.6.0
+  url: https://github.com/JuliaML/MLDatasets.jl/archive/refs/tags/v0.6.0.tar.gz
   validation:
     type: sha256
     value: 4669d216b805ed8ef247a1d5ec8cb6aa757a37a951a0f45c5332631bdacc8dc8
