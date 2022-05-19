@@ -5,24 +5,13 @@ FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
 
 USER root
 
-RUN dnf upgrade -y      && \
-    dnf clean all -y    && \
-    dnf install -y         \
-        zip                \
-        unzip              \
-        net-tools          \
-        curl               \
-        git                \
-        gcc-c++
+RUN dnf upgrade -y --nodocs && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
 
-RUN mkdir -p /opt/julia/repo /tmp/ai-packages
-RUN chown -R 1001:users /opt/julia
-
-
-# pipeline
-#COPY *.tar.gz /tmp/ai-packages
-#RUN tar xfz /tmp/ai-packages -C /opt/python/repo
-#RUN tar xfz /tmp/ai-packages -C /opt/python/repo
+RUN mkdir -p /tmp/ai-packages/ /ai-packages/
+COPY *.tar.gz /tmp/ai-packages/
+RUN tar zxvf /tmp/ai-packages/*.tar.gz -C /ai-packages
 
 USER 1001
 
