@@ -45,7 +45,7 @@ resources:
   validation:
     type: sha256
     value: 1f4e5c9765446c61d6af12c0d5bd4507acb8a8d278b02243132f56b4811fe5c4
-
+    
 - filename: ScikitLearn.jl-0.6.4.tar.gz
   url: https://github.com/cstjean/ScikitLearn.jl/releases/tag/v0.6.4
   validation:
