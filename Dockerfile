@@ -13,8 +13,8 @@ RUN dnf upgrade -y --nodocs && \
 
 RUN mkdir -p /tmp/ai-packages/ 
 WORKDIR /tmp/ai-packages
-COPY *.tar.gz /tmp/ai-packages/ 
-RUN tar xvf /tmp/ai-packages/*.tar.gz 
+COPY *.tar.gz /tmp/ai-packages/
+RUN tar xvf /tmp/ai-packages/*.tar.gz .
 
 USER 1001
 
