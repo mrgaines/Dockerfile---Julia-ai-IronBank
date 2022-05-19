@@ -44,7 +44,7 @@ resources:
   url: https://github.com/malmaud/TensorFlow.jl/releases/tag/v0.12.0
   validation:
     type: sha256
-    value: 818b2fb95dd6c02eac4d2f74b019083f2cb6209cb03a631a9427ac9e2debba40
+    value: 1f4e5c9765446c61d6af12c0d5bd4507acb8a8d278b02243132f56b4811fe5c4
 
 - filename: ScikitLearn.jl-0.6.4.tar.gz
   url: https://github.com/cstjean/ScikitLearn.jl/releases/tag/v0.6.4
