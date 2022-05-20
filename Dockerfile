@@ -63,13 +63,9 @@ RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("Plots")                                    \
         Pkg.add("RobotOSData")
 
-#########################
-# Compliance Mitigation #
-#########################
-
 USER root
 
-# Removing unneeded vulnerable binaries
+RUN cd /julia 
 
 RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
     && chmod -R 775 /home/joules
