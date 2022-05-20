@@ -12,6 +12,10 @@ RUN dnf upgrade -y --nodocs && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
+RUN mkdir -p /tmp/julia/ /julia/
+COPY julia-1.7.2.tar.gz /tmp/julia/
+RUN tar zxvf /tmp/julia/julia-1.7.2.tar.gz -C /julia
+
 RUN mkdir -p /tmp/ai-packages/ 
 WORKDIR /tmp/ai-packages
 COPY *.tar.gz /tmp/ai-packages/
