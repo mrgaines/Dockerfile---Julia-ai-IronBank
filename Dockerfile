@@ -72,7 +72,7 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 
 USER $UID
 
-CMD ["/julia/julia-1.7.2/bin/julia"]
+#CMD ["/julia/julia-1.7.2/bin/julia"]
 
 HEALTHCHECK NONE
 
