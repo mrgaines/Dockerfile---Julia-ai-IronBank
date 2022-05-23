@@ -35,10 +35,10 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN julia -e --no-index --find-links /tmp/ai-packages &&\
-        'using Pkg; Pkg.add("Tensorflow")'                           \
-        'using Pkg; Pkg.add("Clustering")'                           \
-        'using Pkg; Pkg.add("ScikitLearn")'                          \
+RUN julia -e import Pkg, Pkg.update() --no-index --find-links /tmp/ai-packages &&\
+        julia -e import 'using Pkg; Pkg.add("Tensorflow")'                           \
+        julia -e import 'using Pkg; Pkg.add("Clustering")'                           \
+        julia -e import 'using Pkg; Pkg.add("ScikitLearn")'                          \
         'using Pkg; Pkg.add("Flux")'                                 \
         'using Pkg; Pkg.add("Knet")'                                 \
         'using Pkg; Pkg.add("TextAnalysis")'                         \
