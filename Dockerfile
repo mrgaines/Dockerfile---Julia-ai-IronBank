@@ -35,7 +35,8 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN julia using Pkg; --no-index --find-links /tmp/ai-packages  \
+RUN julia --no-index --find-links /tmp/ai-packages  \
+        using Pkg                                       \
         Pkg.add("Tensorflow")                           \
         Pkg.add("Clustering")                           \
         Pkg.add("ScikitLearn")                          \
