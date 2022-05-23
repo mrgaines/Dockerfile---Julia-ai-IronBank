@@ -35,39 +35,22 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
+RUN using Pkg --no-index --find-links /tmp/ai-packages  \
         Pkg.add("Tensorflow")                           \
-        Pkg.add("MLBase")                               \
         Pkg.add("Clustering")                           \
         Pkg.add("ScikitLearn")                          \
         Pkg.add("Flux")                                 \
-        Pkg.add("Merlin")                               \
         Pkg.add("Knet")                                 \
         Pkg.add("TextAnalysis")                         \
-        Pkg.add("StatsModels")                          \
-        Pkg.add("DecisionTree")                         \
         Pkg.add("LIBSVM")                               \
-        Pkg.add("MLJ")                                  \
-        Pkg.add("MLJModels")                            \
+        Pkg.add("MLDatasets")                           \
         Pkg.add("JuliaParser")                          \
         Pkg.add("MLKernels")                            \
         Pkg.add("Kernels")                              \
-        Pkg.add("ANN")                                  \
         Pkg.add("JuliaParser")                          \
-        Pkg.add("OnlineAI")                             \
-        Pkg.add("RDatasets")                            \
-        Pkg.add("UnicodePlots")                         \
-        Pkg.add("Languages")
-
-
-RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
-        Pkg.add("FileIO")                                   \
-        Pkg.add("ForwardDiff")                              \
-        Pkg.add("DiffResults")                              \
-        Pkg.add("Interpolations")                           \
-        Pkg.add("NLopt")                                    \
-        Pkg.add("OrdinaryDiffEq")                           \
-        Pkg.add("Plots")                                    \
-        Pkg.add("RobotOSData")
+        Pkg.add("FileIO")                               \
+        Pkg.add("DiffResults")                          \
+        Pkg.add("Interpolations")                       \
+        Pkg.add("NLopt")                                \                                  
 
 HEALTHCHECK NONE
