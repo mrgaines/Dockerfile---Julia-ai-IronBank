@@ -39,18 +39,18 @@ RUN julia -e --no-index --find-links /tmp/ai-packages &&\
         'using Pkg; Pkg.add("Tensorflow")'                           \
         'using Pkg; Pkg.add("Clustering")'                           \
         'using Pkg; Pkg.add("ScikitLearn")'                          \
-        using Pkg; Pkg.add("Flux")                                 \
-        Pkg.add("Knet")                                 \
-        Pkg.add("TextAnalysis")                         \
-        Pkg.add("LIBSVM")                               \
-        Pkg.add("MLDatasets")                           \
-        Pkg.add("JuliaParser")                          \
-        Pkg.add("MLKernels")                            \
-        Pkg.add("Kernels")                              \
-        Pkg.add("JuliaParser")                          \
-        Pkg.add("FileIO")                               \
-        Pkg.add("DiffResults")                          \
-        Pkg.add("Interpolations")                       \
-        Pkg.add("NLopt")                                                                  
+        'using Pkg; Pkg.add("Flux")'                                 \
+        'using Pkg; Pkg.add("Knet")'                                 \
+        'using Pkg; Pkg.add("TextAnalysis")'                         \
+        'using Pkg; Pkg.add("LIBSVM")'                               \
+        'using Pkg; Pkg.add("MLDatasets")'                           \
+        'using Pkg; Pkg.add("JuliaParser")'                          \
+        'using Pkg; Pkg.add("MLKernels")'                            \
+        'using Pkg; Pkg.add("Kernels")'                              \
+        'using Pkg; Pkg.add("JuliaParser")'                          \
+        'using Pkg; Pkg.add("FileIO")'                               \
+        'using Pkg; Pkg.add("DiffResults")'                          \
+        'using Pkg; Pkg.add("Interpolations")'                       \
+        'using Pkg; Pkg.add("NLopt")'                                                                  
 
 HEALTHCHECK NONE
