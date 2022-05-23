@@ -12,9 +12,9 @@ RUN dnf upgrade -y --nodocs && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
-RUN mkdir -p /tmp/julia/ /julia/
-COPY julia-1.7.2-linux-x86_64.tar.gz /tmp/julia/
-RUN tar xvf /tmp/julia/julia-1.7.2-linux-x86_64.tar.gz -C /julia
+#RUN mkdir -p /tmp/julia/ /julia/
+#COPY julia-1.7.2-linux-x86_64.tar.gz /tmp/julia/
+#RUN tar xvf /tmp/julia/julia-1.7.2-linux-x86_64.tar.gz -C /julia
 
 RUN mkdir -p /tmp/ai-packages/ 
 WORKDIR /tmp/ai-packages
@@ -24,7 +24,7 @@ RUN for f in /tmp/ai-packages/*.tar.gz; do tar xvf $f -C /tmp/ai-packages; done
 
 USER 1001
 
-ENV VIRTUAL_ENV=/julia/venv
+ENV VIRTUAL_ENV=/julia/julia-1.7.2/bin/julia
 RUN julia -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 USER root
