@@ -25,7 +25,7 @@ RUN for f in /tmp/ai-packages/*.tar.gz; do tar xvf $f -C /tmp/ai-packages; done
 USER 1001
 
 ENV VIRTUAL_ENV=/julia/venv
-RUN julia -m venv $VIRTUAL_ENV
+RUN /julia/julia-1.7.2/bin/julia
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 USER root
 
