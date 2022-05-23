@@ -27,6 +27,15 @@ USER 1001
 ENV VIRTUAL_ENV=/julia/venv
 RUN julia -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+USER root
+
+#RUN cd /julia 
+
+RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
+    && chmod -R 775 /home/joules
+
+USER $UID
+CMD ["/julia/julia-1.7.2/bin/julia"]
 
 RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("Tensorflow")                           \
@@ -63,13 +72,4 @@ RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("Plots")                                    \
         Pkg.add("RobotOSData")
 
-USER root
-
-#RUN cd /julia 
-
-RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
-    && chmod -R 775 /home/joules
-
-USER $UID
-CMD ["/julia/julia-1.7.2/bin/julia"]
 HEALTHCHECK NONE
