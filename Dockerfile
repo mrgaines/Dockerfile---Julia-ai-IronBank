@@ -24,9 +24,9 @@ RUN for f in /tmp/ai-packages/*.tar.gz; do tar xvf $f -C /tmp/ai-packages; done
 
 USER 1001
 
-#ENV VIRTUAL_ENV=/julia/venv
-#RUN julia -m venv $VIRTUAL_ENV
-#ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV VIRTUAL_ENV=/julia/venv
+RUN julia -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN using Pkg --no-index --find-links /tmp/ai-packages/     \
         Pkg.add("Tensorflow")                           \
