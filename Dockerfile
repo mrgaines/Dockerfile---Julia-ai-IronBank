@@ -35,7 +35,7 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN julia -e using Pkg --no-index --find-links /tmp/ai-packages  \
+RUN julia using Pkg --no-index --find-links /tmp/ai-packages  \
         Pkg.add("Tensorflow")                           \
         Pkg.add("Clustering")                           \
         Pkg.add("ScikitLearn")                          \
@@ -51,6 +51,6 @@ RUN julia -e using Pkg --no-index --find-links /tmp/ai-packages  \
         Pkg.add("FileIO")                               \
         Pkg.add("DiffResults")                          \
         Pkg.add("Interpolations")                       \
-        Pkg.add("NLopt")                                \                                  
+        Pkg.add("NLopt")                                                                  
 
 HEALTHCHECK NONE
