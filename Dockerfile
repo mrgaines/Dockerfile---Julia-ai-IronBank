@@ -12,9 +12,9 @@ RUN dnf upgrade -y --nodocs && \
     dnf clean all && \
     rm -rf /var/cache/dnf
 
-#RUN mkdir -p /tmp/julia/ /julia/
-#COPY julia-1.7.2-linux-x86_64.tar.gz /tmp/julia/
-#RUN tar xvf /tmp/julia/julia-1.7.2-linux-x86_64.tar.gz -C /julia
+RUN mkdir -p /tmp/julia/ /julia/
+COPY julia-1.7.2-linux-x86_64.tar.gz /tmp/julia/
+RUN tar xvf /tmp/julia/julia-1.7.2-linux-x86_64.tar.gz -C /julia
 
 RUN mkdir -p /tmp/ai-packages/ 
 WORKDIR /tmp/ai-packages
@@ -27,9 +27,7 @@ USER 1001
 ENV VIRTUAL_ENV=/julia/venv
 RUN /julia/julia-1.7.2/bin/julia
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-USER root
-
-RUN cd /julia 
+USER root 
 
 RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
     && chmod -R 775 /home/joules
