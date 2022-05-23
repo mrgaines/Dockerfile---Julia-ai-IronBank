@@ -22,11 +22,11 @@ labels:
   mil.dso.ironbank.product.name: "Julia-ai"
 
 resources:
-- filename: julia-1.7.2.tar.gz
-  url: https://github.com/JuliaLang/julia/releases/download/v1.7.2/julia-1.7.2.tar.gz
+- filename: julia-1.7.2-linux-x86_64.tar.gz
+  url: https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.2-linux-x86_64.tar.gz
   validation:
     type: sha256
-    value: 0847943dd65001f3322b00c7dc4e12f56e70e98c6b798ccbd4f02d27ce161fef
+    value: a75244724f3b2de0e7249c861fbf64078257c16fb4203be78f1cf4dd5973ba95
 
 - filename: Flux.jl-0.13.1.tar.gz
   url: https://github.com/FluxML/Flux.jl/archive/refs/tags/v0.13.1.tar.gz
