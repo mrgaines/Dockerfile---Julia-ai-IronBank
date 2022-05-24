@@ -35,7 +35,7 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN "/julia/julia-1.7.2/bin/julia" -e "using Pkg"; "Pkg.add("Flux")" /tmp/ai-packages
+RUN "/julia/julia-1.7.2/bin/julia" -e "using Pkg"; "/julia/julia-1.7.2/bin/julia"; "Pkg.add("Flux")" /tmp/ai-packages
 
                                                                  
 
