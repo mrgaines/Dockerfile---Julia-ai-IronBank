@@ -19,11 +19,11 @@ RUN tar xvf /tmp/julia/julia-1.7.2-linux-x86_64.tar.gz -C /julia
 RUN mkdir -p /tmp/ai-packages/ 
 WORKDIR /tmp/ai-packages
 COPY *.tar.gz /tmp/ai-packages/
-#RUN tar xvf /tmp/ai-packages/
 RUN for f in /tmp/ai-packages/*.tar.gz; do tar xvf $f -C /tmp/ai-packages; done
 
 USER 1001
 
+RUN JULIA_DEPOT_PATH=/tmp/ai-packages
 ENV VIRTUAL_ENV=/julia/venv
 RUN /julia/julia-1.7.2/bin/julia
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
