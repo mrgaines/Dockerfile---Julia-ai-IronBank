@@ -35,7 +35,7 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN julia -e "using Pkg; Pkg.add([ \
+RUN "/julia/julia-1.7.2/bin/julia" -e "using Pkg; Pkg.add([ \
     \"Flux\", \
     \"Tensorflow\", \
     \"Clustering\", \
