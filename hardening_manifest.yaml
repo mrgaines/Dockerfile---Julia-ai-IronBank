@@ -7,8 +7,8 @@ tags:
 - latest
 
 args:
-  BASE_IMAGE: redhat/ubi/ubi8
-  BASE_TAG: "8.6"
+  BASE_IMAGE: opensource/julia/julia-base
+  BASE_TAG: latest
 
 labels:
   org.opencontainers.image.title: "Julia-ai"
