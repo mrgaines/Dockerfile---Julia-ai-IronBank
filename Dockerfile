@@ -13,7 +13,7 @@ RUN mkdir -p /tmp/ai-packages/ /ai-packages/
 COPY *.tar.gz /tmp/ai-packages/
 RUN for f in /tmp/ai-packages/*.tar.gz; do tar xvf $f -C /ai-packages; done
 RUN rm -rf /tmp/ai-packages
-chmod +x /ai-packages/
+RUN chmod +x /ai-packages/
 
 USER 1000
 CMD ["JULIA_DEPOT_PATH=/ai-packages /julia/julia-1.7.2/bin/julia"]
