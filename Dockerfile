@@ -19,7 +19,7 @@ ENV VIRTUAL_ENV=/julia/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 USER 1000
-RUN "/julia/julia-1.7.2/bin/julia" -e "using Pkg"; "Pkg.add(Flux)"
+RUN "/julia/julia-1.7.2/bin/julia" -e "]"; "add Flux"
 
 CMD ["/julia/julia-1.7.2/bin/julia"]
 HEALTHCHECK NONE
