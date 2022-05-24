@@ -36,12 +36,12 @@ USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
 RUN '/julia/julia-1.7.2/bin/julia' -e 'import Pkg' /tmp/ai-packages &&\
-        'using Pkg; Pkg.add("Tensorflow")'                           \
-        'using Pkg; Pkg.add("Clustering")'                           \
-        'using Pkg; Pkg.add("ScikitLearn")'                          \
-        'using Pkg; Pkg.add("Flux")'                                 \
-        'using Pkg; Pkg.add("Knet")'                                 \
-        'using Pkg; Pkg.add("TextAnalysis")'                         \
+        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Tensorflow")'                           \
+        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Clustering")'                           \
+        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("ScikitLearn")'                          \
+        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Flux")'                                 \
+        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Knet")'                                 \
+        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("TextAnalysis")'                         \
         'using Pkg; Pkg.add("LIBSVM")'                               \
         'using Pkg; Pkg.add("MLDatasets")'                           \
         'using Pkg; Pkg.add("JuliaParser")'                          \
