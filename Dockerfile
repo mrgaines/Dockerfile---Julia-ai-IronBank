@@ -35,22 +35,23 @@ RUN useradd -m -s /bin/bash -N -u $UID -g $GID $USER   \
 USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
-RUN '/julia/julia-1.7.2/bin/julia' -e 'import Pkg' 'using Pkg' 'Pkg.add("Tensorflow") /tmp/ai-packages &&\
-        '/julia/julia-1.7.2/bin/julia' 'Pkg.add("Tensorflow")'                           \
-        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add(\"Clustering\")'                           \
-        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add(\"ScikitLearn\")'                          \
-        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add(\"Flux\")'                                 \
-        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add(\"Knet\")'                                 \
-        '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add(\"TextAnalysis\")'                         \
-        'using Pkg; Pkg.add("LIBSVM")'                               \
-        'using Pkg; Pkg.add("MLDatasets")'                           \
-        'using Pkg; Pkg.add("JuliaParser")'                          \
-        'using Pkg; Pkg.add("MLKernels")'                            \
-        'using Pkg; Pkg.add("Kernels")'                              \
-        'using Pkg; Pkg.add("JuliaParser")'                          \
-        'using Pkg; Pkg.add("FileIO")'                               \
-        'using Pkg; Pkg.add("DiffResults")'                          \
-        'using Pkg; Pkg.add("Interpolations")'                       \
-        'using Pkg; Pkg.add("NLopt")'                                                                  
+RUN '/julia/julia-1.7.2/bin/julia' 'import Pkg' 'using Pkg' /tmp/ai-packages &&\
+    '/julia/julia-1.7.2/bin/julia' 'Pkg.add("Tensorflow")
+    '/julia/julia-1.7.2/bin/julia' 'Pkg.add("Clustering")'                           \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Clustering")'                           \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("ScikitLearn")'                          \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Flux")'                                 \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Knet")'                                 \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("TextAnalysis")'                         \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("LIBSVM")'                               \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("MLDatasets")'                           \
+    '/julia/julia-1.7.2/bin/julia''using Pkg; Pkg.add("JuliaParser")'                          \
+    '/julia/julia-1.7.2/bin/julia''using Pkg; Pkg.add("MLKernels")'                            \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Kernels")'                              \
+    '/ju lia/julia-1.7.2/bin/julia''using Pkg; Pkg.add("JuliaParser")'                          \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("FileIO")'                               \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("DiffResults")'                          \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Interpolations")'                       \
+    '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("NLopt")'                                                                  
 
 HEALTHCHECK NONE
