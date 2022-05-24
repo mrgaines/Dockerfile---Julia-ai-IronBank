@@ -36,7 +36,7 @@ USER $UID
 CMD ["/julia/julia-1.7.2/bin/julia"]
 
 RUN '/julia/julia-1.7.2/bin/julia' 'import Pkg' 'using Pkg' /tmp/ai-packages &&\
-    '/julia/julia-1.7.2/bin/julia' 'Pkg.add("Tensorflow")
+    '/julia/julia-1.7.2/bin/julia' 'Pkg.add("Tensorflow")'                          \
     '/julia/julia-1.7.2/bin/julia' 'Pkg.add("Clustering")'                           \
     '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("Clustering")'                           \
     '/julia/julia-1.7.2/bin/julia' 'using Pkg; Pkg.add("ScikitLearn")'                          \
