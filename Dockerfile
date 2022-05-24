@@ -50,7 +50,7 @@ RUN "/julia/julia-1.7.2/bin/julia" "using Pkg; Pkg.add([ \
     \"DiffResults\", \
     \"Interpolations\", \
     \"NLopt\" \
-]);" /tmp/ai-packages
+]);" --no-index --find-links /tmp/ai-packages
                                                                  
 
 HEALTHCHECK NONE
