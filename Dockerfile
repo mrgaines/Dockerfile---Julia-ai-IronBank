@@ -10,8 +10,8 @@ RUN dnf upgrade -y --nodocs && \
     rm -rf /var/cache/dnf
 
 RUN mkdir -p /tmp/ai-packages/ /ai-packages/
-COPY *.tar.gz /tmp/ai-packages/
-RUN for f in /tmp/ai-packages/*.tar.gz; do tar xvf $f -C /ai-packages; done
+COPY julia-ai-packages.tar.gz /tmp/ai-packages/
+RUN tar xvf /tmp/ai-packages/julia-ai-packages.tar.gz -C /ai-packages
 RUN rm -rf /tmp/ai-packages
 RUN chmod +x /ai-packages/
 

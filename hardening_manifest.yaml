@@ -22,89 +22,12 @@ labels:
   mil.dso.ironbank.product.name: "Julia-ai"
 
 resources:
-#- filename: julia-1.7.2-linux-x86_64.tar.gz
-#  url: https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.2-linux-x86_64.tar.gz
-#  validation:
-#    type: sha256
-#    value: a75244724f3b2de0e7249c861fbf64078257c16fb4203be78f1cf4dd5973ba95
+- filename: julia-ai-packages.tar.gz
+  url: http://coeusfileserver.usgovvirginia.cloudapp.usgovcloudapi.net/julia/julia-ai-packages.tar.gz
+  validation:
+    type: sha256
+    value: f7e508b23b962f64ebec93227c5e5b4e61e656319828e14a5651591a01f6efc7
 
-- filename: Flux.jl-0.13.1.tar.gz
-  url: https://github.com/FluxML/Flux.jl/archive/refs/tags/v0.13.1.tar.gz
-  validation:
-    type: sha256
-    value: 96565fb8bd2214178627cadb57dfe072150c8c2c248e78a48b6358a2459553bb
-
-- filename: Knet.jl-1.4.10.tar.gz
-  url: https://github.com/denizyuret/Knet.jl/archive/refs/tags/v1.4.10.tar.gz
-  validation:
-    type: sha256
-    value: a95319d5c7011d3fdd1d9b9bea7b8259c761891acb247ebda310e227572b6189
-    
-- filename: ScikitLearn.jl-0.6.4.tar.gz
-  url: https://github.com/cstjean/ScikitLearn.jl/archive/refs/tags/v0.6.4.tar.gz
-  validation:
-    type: sha256
-    value: 8d513a2430fb79cb25baf5ad8cd12a265f980b7f6cf7793efe44d8b952b934aa
-
-- filename: TextAnalysis.jl-0.7.3.tar.gz
-  url: https://github.com/JuliaText/TextAnalysis.jl/archive/refs/tags/v0.7.3.tar.gz
-  validation:
-    type: sha256
-    value: 1fb0b531e05be7634eaa5e4f70355498b34c04070b4a5a790fd465bdf50220cc
-
-- filename: Clustering.jl-0.14.2.tar.gz
-  url: https://github.com/JuliaStats/Clustering.jl/archive/refs/tags/v0.14.2.tar.gz
-  validation:
-    type: sha256
-    value: 4c0254d0d11c7fe74aa59a67a6ac2e5f15af1fdd8726ac5b378d06265ac7f952
-
-- filename: MLDatasets.jl-0.6.0.tar.gz
-  url: https://github.com/JuliaML/MLDatasets.jl/archive/refs/tags/v0.6.0.tar.gz
-  validation:
-    type: sha256
-    value: 4669d216b805ed8ef247a1d5ec8cb6aa757a37a951a0f45c5332631bdacc8dc8
- 
-- filename: TensorFlow.jl-0.12.0.tar.gz
-  url: https://github.com/malmaud/TensorFlow.jl/archive/refs/tags/v0.12.0.tar.gz
-  validation:
-    type: sha256
-    value: 818b2fb95dd6c02eac4d2f74b019083f2cb6209cb03a631a9427ac9e2debba40
-
-- filename: JuliaParser.jl-0.7.4.tar.gz
-  url: https://github.com/JuliaLang/JuliaParser.jl/archive/refs/tags/v0.7.4.tar.gz
-  validation:
-    type: sha256
-    value: 45a8db8d08e3092c06b0d424a815fe9d25b3c1445db38da554f1ecb7aee7e97b
-
-- filename: FileIO.jl-1.14.0.tar.gz
-  url: https://github.com/JuliaIO/FileIO.jl/archive/refs/tags/v1.14.0.tar.gz
-  validation:
-    type: sha256
-    value: 2f3bdf4b4fafedf966a34004f194b1a8ac94bb1fec93933fd70eb68faded7b23
-
-- filename: LIBSVM.jl-0.8.0.tar.gz
-  url: https://github.com/JuliaML/LIBSVM.jl/archive/refs/tags/v0.8.0.tar.gz
-  validation:
-    type: sha256
-    value: 38775e7e1f53d3c1091ac77a8162ed1deb6b29ec376722f45b53c6149edfa4d8
-
-- filename: DiffResults.jl-1.0.3.tar.gz
-  url: https://github.com/JuliaDiff/DiffResults.jl/archive/refs/tags/v1.0.3.tar.gz
-  validation:
-    type: sha256
-    value: 6d8497114b452721f42751d91cbae37116b1c5a2a3c6115bb9a9637abcb7e5d7
-
-- filename: Interpolations.jl-0.13.6.tar.gz
-  url: https://github.com/JuliaMath/Interpolations.jl/archive/refs/tags/v0.13.6.tar.gz
-  validation:
-    type: sha256
-    value: d539158cbb77c579637544474511d7246fecfe3bb69fd50677d0ce38e51281ea
-
-- filename: NLopt.jl-0.6.5.tar.gz
-  url: https://github.com/JuliaOpt/NLopt.jl/archive/refs/tags/v0.6.5.tar.gz
-  validation:
-    type: sha256
-    value: eecb677ab78d1118a7121ab5ece2a4d7b846c85b316007da95f40e1f888c486f 
     
 maintainers:
 - email: jafforice@gmail.com
