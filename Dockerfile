@@ -15,8 +15,7 @@ RUN tar xvf /tmp/ai-packages/julia-ai-packages.tar.gz -C /ai-packages
 RUN rm -rf /tmp/ai-packages
 RUN chmod +x /ai-packages/
 
-RUN rm -f /ai-packages/installhere/packages/MbedTLS/4YY6E/test/* \
-          /ai-packages/installhere/packages/MbedTLS/4YY6E/test/* \
+RUN rm -f /ai-packages/installhere/packages/MbedTLS/4YY6E/test/clntsrvr/* \
           /ai-packages/installhere/packages/HTTP/aTjcj/test/resources/*
 
 USER 1000
