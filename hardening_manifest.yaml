@@ -1,0 +1,36 @@
+apiVersion: v1
+
+name: opensource/julia/julia-ai
+
+tags:
+- 1.7.2
+- latest
+
+args:
+  BASE_IMAGE: opensource/julia/julia-base
+  BASE_TAG: 1.7.2
+
+labels:
+  org.opencontainers.image.title: "Julia-ai"
+  org.opencontainers.image.description: "A container providing the Julia language with AI, ML, and Robotic libraries"
+  org.opencontainers.image.licenses: "MIT License"
+  org.opencontainers.image.url: "https://repo1.dso.mil/dsop/opensource/julia/julia-ai"
+  org.opencontainers.image.vendor: "Julia"
+  org.opencontainers.image.version: "v1.7.2"
+  mil.dso.ironbank.image.keywords: "Julia, language, ai/ml"
+  mil.dso.ironbank.image.type: "opensource"
+  mil.dso.ironbank.product.name: "Julia-ai"
+
+resources:
+- filename: julia-ai-packages.tar.gz
+  url: http://coeusfileserver.usgovvirginia.cloudapp.usgovcloudapi.net/julia/julia-ai-packages.tar.gz
+  validation:
+    type: sha256
+    value: f7e508b23b962f64ebec93227c5e5b4e61e656319828e14a5651591a01f6efc7
+
+    
+maintainers:
+- email: jafforice@gmail.com
+  username: jafforice
+  name: jafforice.gaines
+  cht_member: False

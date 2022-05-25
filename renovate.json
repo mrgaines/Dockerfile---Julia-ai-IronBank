@@ -1,0 +1,38 @@
+{
+  "assignees": [
+    "@acervant",
+    "@jafforice"
+  ],
+  "baseBranches": [
+    "development"
+  ],
+  "automerge": true,
+  "gitLabAutomerge": true,
+  "packageRules": [
+    {
+      "datasources": [
+        "github-tags"
+      ],
+      "packageNames": [
+        "Julia-ai"
+      ],
+      "separateMinorPatch": true,
+      "minor": {
+        "enabled": false
+      }
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^hardening_manifest.yaml$"
+      ],
+      "matchStrings": [
+        "org\\.opencontainers\\.image\\.version:\\s+(\\s|\"|')?(?<currentValue>.+?)(\\s|\"|'|$)",
+        "tags:\\s+-(\\s|\"|')+(?<currentValue>.+?)(\\s|\"|'|$)+"
+      ],
+      "depNameTemplate": "Julia-ai",
+      "datasourceTemplate": "github-tags"
+    }
+  ]
+}
